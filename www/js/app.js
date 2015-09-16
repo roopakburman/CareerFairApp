@@ -18,8 +18,10 @@ ceb.run(function($ionicPlatform) {
 	
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $compileProvider, $ionicConfigProvider) {
 
+  $ionicConfigProvider.tabs.position('bottom');
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -86,7 +88,7 @@ ceb.run(function($ionicPlatform) {
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'DashCtrl'
       }
     }
   });

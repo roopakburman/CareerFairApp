@@ -1,9 +1,6 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+  <ion-content padding="true" ng-controller="DashCtrl">
+      <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+      <img ng-src="{{lastPhoto}}" style="max-width: 100%">
   </ion-content>
 </ion-view>
